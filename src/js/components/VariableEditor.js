@@ -232,7 +232,7 @@ class VariableEditor extends React.PureComponent {
             <div>
                 <AutosizeTextarea
                     type="text"
-                    inputRef={input => input && input.focus()}
+                    autoFocus
                     value={editValue}
                     class="variable-editor"
                     onChange={event => {

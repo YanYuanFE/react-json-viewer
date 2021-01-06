@@ -1,8 +1,30 @@
 {
-  "plugins": [
-    'transform-class-properties',
-    'react-html-attrs',
-    'transform-function-bind'
+  "presets": [
+    [
+    "@babel/preset-env",
+    {
+      "modules": false
+    }
   ],
-  "presets": ["react", "es2015", "stage-0"]
+    ["@babel/preset-react", {"throwIfNamespace": false}]
+  ],
+  "plugins": [
+    [
+      "@babel/plugin-proposal-class-properties",
+      {
+        "loose": true
+      }
+    ],
+    [
+      "@babel/plugin-transform-runtime",
+      {
+        "corejs": {
+          "version": 3,
+          "proposals": true
+        },
+        "useESModules": true
+      }
+    ],
+    "react-html-attrs"
+  ]
 }
